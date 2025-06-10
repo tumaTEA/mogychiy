@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Василий Mogychiy | Музыкант и Звукорежиссёр</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(to right, #1a1a1a, #333);
+            padding: 20px 0;
+            text-align: center;
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.8;
+        }
+        
+        nav {
+            background-color: #1a1a1a;
+            padding: 15px 0;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin: 0 15px;
+        }
+        
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #1db954;
+        }
+        
+        section {
+            padding: 60px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2rem;
+            color: #1db954;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+            padding: 0 20px;
+        }
+        
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+        
+        .about-image img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .service-card {
+            background-color: #1a1a1a;
+            padding: 30px;
+            border-radius: 10px;
+            transition: transform 0.3s;
+            position: relative;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-card h3 {
+            color: #1db954;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .price {
+            background-color: #1db954;
+            color: #121212;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            display: inline-block;
+            margin: 15px 0;
+            font-size: 1.1rem;
+        }
+        
+        .portfolio-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .portfolio-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            height: 250px;
+        }
+        
+        .portfolio-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .portfolio-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .portfolio-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.7);
+            padding: 20px;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+        
+        .portfolio-item:hover .portfolio-overlay {
+            transform: translateY(0);
+        }
+        
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            background-color: #1a1a1a;
+            border: 1px solid #333;
+            color: #ffffff;
+            border-radius: 5px;
+        }
+        
+        .form-group textarea {
+            height: 150px;
+        }
+        
+        button {
+            background-color: #1db954;
+            color: #ffffff;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        button:hover {
+            background-color: #1ed760;
+        }
+        
+        footer {
+            background-color: #1a1a1a;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 60px;
+        }
+        
+        .social-links {
+            margin: 20px 0;
+        }
+        
+        .social-links a {
+            color: #ffffff;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: #1db954;
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">Василий Mogychiy</div>
+            <div class="tagline">Музыкант | Звукорежиссёр | Продюсер</div>
+        </div>
+    </header>
+    
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#about">Обо мне</a></li>
+                <li><a href="#services">Услуги и цены</a></li>
+                <li><a href="#portfolio">Портфолио</a></li>
+                <li><a href="#contact">Контакты</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">Обо мне</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Привет! Я профессиональный музыкант и звукорежиссёр с более чем 10-летним опытом работы в индустрии.</p>
+                    <p>Специализируюсь на записи, сведении и мастеринге музыкальных композиций различных жанров. Работал с многими известными артистами и участвовал в создании саундтреков для фильмов и рекламы.</p>
+                    <p>Моя цель - помочь артистам реализовать их творческое видение и добиться профессионального звучания их музыки.</p>
+                </div>
+                <div class="about-image">
+                    <img src="photo.jpeg" width="300" height="300" alt="Фото музыканта">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="services">
+        <div class="container">
+            <h2 class="section-title">Услуги и цены</h2>
+            <div class="services">
+                <div class="service-card">
+                    <h3>Запись вокала</h3>
+                    <div class="price">от 3 000 ₽/трек</div>
+                    <p>Профессиональная запись вокала в студийных условиях с использованием высококачественного оборудования. Включает 2 часа студийного времени и базовую обработку.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Сведение и мастеринг</h3>
+                    <div class="price">от 5 000 ₽/трек</div>
+                    <p>Обработка и сведение многодорожечных проектов, финальный мастеринг для различных платформ. Каждый последующий трек в альбоме - скидка 15%.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Аранжировка</h3>
+                    <div class="price">от 8 000 ₽/трек</div>
+                    <p>Создание профессиональных аранжировок для ваших песен в различных стилях и жанрах. Включает до 3 вариантов и 2 правки.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Саунд-дизайн</h3>
+                    <div class="price">от 10 000 ₽/проект</div>
+                    <p>Создание уникальных звуков и эффектов для музыки, фильмов, игр и рекламы. Цена зависит от сложности проекта.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Консультации</h3>
+                    <div class="price">2 500 ₽/час</div>
+                    <p>Профессиональные консультации по вопросам звукозаписи, оборудования и музыкального производства. Возможны онлайн-сессии.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Живые выступления</h3>
+                    <div class="price">от 15 000 ₽/мероприятие</div>
+                    <p>Организация и звуковое сопровождение живых выступлений и концертов. Включает звуковое оборудование и работу звукорежиссёра.</p>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 30px; font-style: italic;">
+                * Все цены указаны как ориентировочные. Точная стоимость рассчитывается индивидуально после обсуждения деталей проекта.
+            </p>
+        </div>
+    </section>
+    
+    <section id="portfolio">
+        <div class="container">
+            <h2 class="section-title">Портфолио</h2>
+            <div class="portfolio-items">
+                <div class="portfolio-item">
+                    <img src="https://via.placeholder.com/300x300" alt="Проект 1">
+                    <div class="portfolio-overlay">
+                        <h3>Название проекта 1</h3>
+                        <p>Описание проекта и участие в нём</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://via.placeholder.com/300x300" alt="Проект 2">
+                    <div class="portfolio-overlay">
+                        <h3>Название проекта 2</h3>
+                        <p>Описание проекта и участие в нём</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://via.placeholder.com/300x300" alt="Проект 3">
+                    <div class="portfolio-overlay">
+                        <h3>Название проекта 3</h3>
+                        <p>Описание проекта и участие в нём</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://via.placeholder.com/300x300" alt="Проект 4">
+                    <div class="portfolio-overlay">
+                        <h3>Название проекта 4</h3>
+                        <p>Описание проекта и участие в нём</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Контакты</h2>
+            <div class="contact-form">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Имя</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Сообщение</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit">Отправить</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-soundcloud"></i></a>
+                <a href="#"><i class="fab fa-spotify"></i></a>
+            </div>
+            <p>© 2025 Имя Фамилия. Все права защищены.</p>
+        </div>
+    </footer>
+    
+    <!-- Font Awesome для иконок -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>
